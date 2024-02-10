@@ -25,3 +25,7 @@ After the services are up and running, it could take some minutes to start for t
 https://localhost
 
 
+Use the default credentials for login:
+
+User: mifos
+Password: password
