@@ -32,7 +32,7 @@ services:
       - "5432:5432"
   # Backend service
   fineract-server:
-    image: openmf/fineract:1.9.0
+    image: openmf/fineract:1.10.0
     volumes:
       - ./fineract-server/data:/data
     healthcheck:
