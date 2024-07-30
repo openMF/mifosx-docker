@@ -1,4 +1,4 @@
-# Mifos X Platform Release 23.12 on Docker Compose
+# Mifos X Platform Release 24.04 on Docker Compose
 
 This setup is not for production environments!
 
