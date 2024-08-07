@@ -23,11 +23,11 @@ spec:
       containers:
         - env:
             - name: FINERACT_API_PROVIDER
-              value: /fineract-provider/actuator
+              value: /fineract-provider/api
             - name: FINERACT_API_URL
-              value: http://fineract-server.local
+              value: http://mifos.local
             - name: FINERACT_API_URLS
-              value: http://fineract-server.local
+              value: http://mifos.local
             - name: FINERACT_API_VERSION
               value: /v1
             - name: FINERACT_PLATFORM_TENANT_IDENTIFIER

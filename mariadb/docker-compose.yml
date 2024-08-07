@@ -5,8 +5,8 @@ services:
     image: openmf/web-app:master
     restart: always
     environment:
-      - FINERACT_API_URLS=http://localhost:8080
-      - FINERACT_API_URL=http://localhost:8080
+      - FINERACT_API_URLS=http://localhost:8181
+      - FINERACT_API_URL=http://localhost:8181
       - FINERACT_API_PROVIDER=/fineract-provider/api
       - FINERACT_API_VERSION=/v1
       - FINERACT_PLATFORM_TENANT_IDENTIFIER=default
@@ -15,7 +15,7 @@ services:
       - MIFOS_PRELOAD_CLIENTS=true
       - MIFOS_DEFAULT_CHAR_DELIMITER=,
     ports:
-      - 80:80
+      - 8282:80
   # Database service
   fineractmysql:
     image: mariadb:10.8
@@ -36,7 +36,7 @@ services:
       retries: 10
   # Backend service
   fineract-server:
-    image: openmf/fineract:develop
+    image: openmf/fineract:1.9.0
     volumes:
       - ./fineract-server/data:/data
     healthcheck:
@@ -44,7 +44,7 @@ services:
       timeout: 10s
       retries: 10
     ports:
-      - 8080:8080
+      - 8181:8080
     depends_on:
       fineractmysql:
         condition: service_healthy
