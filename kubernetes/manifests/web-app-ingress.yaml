@@ -5,14 +5,14 @@ metadata:
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "http://mifos.local"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "http://mifos.mifos.gazelle.test"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-headers: "Authorization, Content-Type, Origin"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
 spec:
   ingressClassName: nginx
   rules:
-  - host: mifos.local
+  - host: mifos.mifos.gazelle.test
     http:
       paths:
       - path: /fineract-provider

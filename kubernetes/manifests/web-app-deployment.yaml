@@ -25,9 +25,9 @@ spec:
             - name: FINERACT_API_PROVIDER
               value: /fineract-provider/api
             - name: FINERACT_API_URL
-              value: http://mifos.local
+              value: http://mifos.mifos.gazelle.test
             - name: FINERACT_API_URLS
-              value: http://mifos.local
+              value: http://mifos.mifos.gazelle.test
             - name: FINERACT_API_VERSION
               value: /v1
             - name: FINERACT_PLATFORM_TENANT_IDENTIFIER
