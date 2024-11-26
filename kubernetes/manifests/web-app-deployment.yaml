@@ -30,8 +30,10 @@ spec:
               value: http://mifos.mifos.gazelle.test
             - name: FINERACT_API_VERSION
               value: /v1
+            - name: FINERACT_PLATFORM_TENANTS_IDENTIFIER
+              value: "greenbank, bluebank, default"  
             - name: FINERACT_PLATFORM_TENANT_IDENTIFIER
-              value: default
+              value: gorilla
             - name: MIFOS_DEFAULT_CHAR_DELIMITER
               value: ','
             - name: MIFOS_DEFAULT_LANGUAGE

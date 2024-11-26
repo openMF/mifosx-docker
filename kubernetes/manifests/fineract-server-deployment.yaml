@@ -39,7 +39,9 @@ spec:
             - name: FINERACT_DEFAULT_TENANTDB_UID
               value: "root"              
             - name: FINERACT_DEFAULT_TENANTDB_PWD
-              value: "ethieTieCh8ahv"
+              value: "mysqlpw"
+            - name: FINERACT_DEFAULT_TENANTDB_MASTER_PASSWORD
+              value: "fineract" 
             - name: FINERACT_HIKARI_AUTO_COMMIT
               value: "true"
             - name: FINERACT_HIKARI_CONNECTION_TIMEOUT
@@ -79,7 +81,7 @@ spec:
             - name: FINERACT_HIKARI_MINIMUM_IDLE
               value: "3"
             - name: FINERACT_HIKARI_PASSWORD
-              value: "ethieTieCh8ahv"
+              value: "mysqlpw"
             - name: FINERACT_HIKARI_TEST_QUERY
               value: SELECT 1
             - name: FINERACT_HIKARI_USERNAME
@@ -96,7 +98,7 @@ spec:
               value: org.mariadb.jdbc.Driver
             - name:  FINERACT_SECURITY_BASICAUTH_ENABLED
               value: "true" 
-          image: openmf/fineract:1.9.0
+          image: openmf/fineract:develop
           livenessProbe:
             exec:
               command:
