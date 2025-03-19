@@ -18,7 +18,7 @@ services:
       - 80:80
   # Database service
   fineractmysql:
-    image: mariadb:11.5.2
+    image: mariadb:11.7.2
     ports:
       - 3308:3306
     volumes:
@@ -30,10 +30,10 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: skdcnwauicn2ucnaecasdsajdnizucawencascdca
-    healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "--password=skdcnwauicn2ucnaecasdsajdnizucawencascdca" ]
-      timeout: 10s
-      retries: 10
+#    healthcheck:
+#      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "--password=skdcnwauicn2ucnaecasdsajdnizucawencascdca" ]
+#      timeout: 10s
+#      retries: 10
   # Backend service
   fineract-server:
     image: openmf/fineract:develop
@@ -45,9 +45,9 @@ services:
       retries: 10
     ports:
       - 8080:8080
-    depends_on:
-      fineractmysql:
-        condition: service_healthy
+#    depends_on:
+#      fineractmysql:
+#        condition: service_healthy
     environment:
       # NOTE: node aware scheduler
       - FINERACT_NODE_ID=1
