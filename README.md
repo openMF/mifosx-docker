@@ -4,6 +4,24 @@ This setup is not for production environments!
 
 This has been tested on Linux Ubuntu 22.04 LTS. Make sure you have Docker and Docker Compose plugin installed
 
+**Note for Mac Users with ARM Processor:**  
+If you are using a Mac with an Apple Silicon (ARM) processor, you will need to add the following line to your `docker-compose.yml` file. 
+Add the following line under the `fineract-server` and `web-app` services.
+
+Example:
+```ymal
+services:
+  web-app:
+    image: openmf/web-app:master
+    platform: linux/x86_64/v8
+    ...
+
+  fineract-server:
+    image: fineract-server:latest
+    platform: linux/x86_64/v8
+    ...
+```
+
 For using MariaDB:
 
 ```console
