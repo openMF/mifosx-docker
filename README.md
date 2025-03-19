@@ -2,7 +2,7 @@
 
 This setup is not for production environments!
 
-This has been tested on Linux Ubuntu 22.04 LTS. Make sure you have Docker and Docker Compose plugin installed
+This has been tested on Linux Ubuntu 24.04 LTS. Make sure you have Docker and Docker Compose plugin installed
 
 **Note for Mac Users with ARM Processor:**  
 If you are using a Mac with an Apple Silicon (ARM) processor, you will need to add the following line to your `docker-compose.yml` file. 
