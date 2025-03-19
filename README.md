@@ -9,7 +9,7 @@ If you are using a Mac with an Apple Silicon (ARM) processor, you will need to a
 Add the following line under the `fineract-server` and `web-app` services.
 
 Example:
-```ymal
+```yaml
 services:
   web-app:
     image: openmf/web-app:master
