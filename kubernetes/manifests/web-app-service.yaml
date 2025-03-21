@@ -2,10 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    kompose.cmd: /home/azureuser/kompose --file docker-compose.yml convert
-    kompose.version: 1.34.0 (cbf2835db)
+    description: "web Application for Fineract server")
   labels:
-    io.kompose.service: web-app
+    app: web-app
   name: web-app
 spec:
   ports:
@@ -13,4 +12,4 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    io.kompose.service: web-app
+    app: web-app

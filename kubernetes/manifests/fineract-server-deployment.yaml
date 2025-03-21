@@ -112,7 +112,6 @@ spec:
               path: /fineract-provider/actuator/health/readiness
               port: 8080
             initialDelaySeconds: 180
-
           name: fineract-server
           ports:
             - containerPort: 8080

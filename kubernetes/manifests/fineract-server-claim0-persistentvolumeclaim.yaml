@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    io.kompose.service: fineract-server-claim0
+    app: fineract-server
   name: fineract-server-claim0
 spec:
   accessModes:
