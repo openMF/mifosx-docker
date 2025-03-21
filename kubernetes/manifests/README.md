@@ -1,5 +1,5 @@
 # Kubernetes manifests for use by mifos-gazelle 
-The kubernetes manifests in this directory have been created using the "kompose" utility and initially used the mifosx-docker/mariadb/docker-compose.yml as src.   
+The kubernetes manifests in this directory are now manually maintained by the Mifos Gazelle devs, but were originally created using the "kompose" utility and used the mifosx-docker/mariadb/docker-compose.yml as input src.   
 
 # use / testing 
 - see the mifos-gazelle readme for full instructions on deployment and testing 
