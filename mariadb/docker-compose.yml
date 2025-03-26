@@ -2,7 +2,7 @@ version: '3.7'
 services:
   # Frontend service
   web-app:
-    image: openmf/web-app:master
+    image: openmf/web-app:1.11
     restart: always
     environment:
       - FINERACT_API_URLS=http://localhost:8080
@@ -18,9 +18,9 @@ services:
       - 80:80
   # Database service
   fineractmysql:
-    image: mariadb:11.7.2
+    image: mariadb:11.4
     ports:
-      - 3308:3306
+      - 3306:3306
     volumes:
 #Remove comment for data persistence
 #      - ./fineract-db/data:/var/lib/mysql
@@ -30,13 +30,15 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: skdcnwauicn2ucnaecasdsajdnizucawencascdca
-#    healthcheck:
-#      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "--password=skdcnwauicn2ucnaecasdsajdnizucawencascdca" ]
-#      timeout: 10s
-#      retries: 10
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
   # Backend service
   fineract-server:
-    image: openmf/fineract:develop
+    image: openmf/fineract:1.11
     volumes:
       - ./fineract-server/data:/data
     healthcheck:
@@ -45,9 +47,9 @@ services:
       retries: 10
     ports:
       - 8080:8080
-#    depends_on:
-#      fineractmysql:
-#        condition: service_healthy
+    depends_on:
+      fineractmysql:
+        condition: service_healthy
     environment:
       # NOTE: node aware scheduler
       - FINERACT_NODE_ID=1
