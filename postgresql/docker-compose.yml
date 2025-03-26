@@ -2,7 +2,7 @@ version: '3.7'
 services:
   # Frontend service
   web-app:
-    image: openmf/web-app:master
+    image: openmf/web-app:1.11
     restart: always
     environment:
       - FINERACT_API_URLS=http://localhost:8080
@@ -18,7 +18,7 @@ services:
       - 80:80
   # Database service
   postgresql:
-    image: postgres:17.4
+    image: postgres:16.6
     volumes:
       - ./fineract-db/docker/01-init.sh:/docker-entrypoint-initdb.d/01-init.sh:Z,ro
     restart: always
@@ -32,7 +32,7 @@ services:
       - "5432:5432"
   # Backend service
   fineract-server:
-    image: openmf/fineract:develop
+    image: openmf/fineract:1.11
     volumes:
       - ./fineract-server/data:/data
     healthcheck:
